@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GOLD WAVE | 김민재 대표</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --card-bg: #0c0c0c;
+            --gold-primary: #c5a059;
+            --gold-sub: #8e6d31;
+            --text-main: #ffffff;
+            --text-sub: #999999;
+            --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+        }
+
+        /* 모바일 최적화 기본 설정 */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; }
+        body { background-color: var(--bg-color); font-family: var(--font-family); color: var(--text-main); overflow-x: hidden; line-height: 1.6; word-break: keep-all; }
+
+        .wrapper { width: 100%; max-width: 430px; margin: 0 auto; position: relative; padding-bottom: 140px; }
+
+        /* [1] 상단 로고 & 공유 버튼 */
+        .logo-header { width: 100%; padding: 30px 20px 15px; display: flex; justify-content: center; position: relative; }
+        .heartbeat-logo { width: 75px; animation: heartbeat 1.5s ease-in-out infinite; filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.4)); }
+        @keyframes heartbeat { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
+        
+        .share-top-btn { position: absolute; right: 20px; top: 35px; background: rgba(255,255,255,0.1); border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .share-top-btn svg { width: 18px; height: 18px; fill: var(--gold-primary); }
+
+        .top-slogan { text-align: center; padding: 10px 20px 40px; }
+        .top-slogan h2 { font-size: 20px; font-weight: 900; letter-spacing: 3px; color: var(--gold-primary); margin-bottom: 8px; }
+        .top-slogan p { font-size: 13px; color: var(--text-sub); font-weight: 300; }
+
+        /* [2] 비주얼 영역 */
+        .visual-area { position: relative; width: 100%; height: 75vh; overflow: visible; }
+        .main-photo { width: 100%; height: 100%; object-fit: cover; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
+        .floating-namecard {
+            position: absolute; bottom: -40px; left: 20px; right: 20px; padding: 35px 30px; z-index: 20;
+            background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(25px) saturate(180%); -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.12); border-top: 1px solid rgba(255, 255, 255, 0.25); border-radius: 18px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(197, 160, 89, 0.05);
+            animation: cardAppear 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        @keyframes cardAppear { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .name { font-size: 30px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+        .role { font-size: 14px; color: var(--gold-primary); font-weight: 600; letter-spacing: 1.5px; }
+        .tags { display: flex; gap: 6px; margin-top: 20px; flex-wrap: wrap; }
+        .tag-item { font-size: 10px; padding: 4px 10px; background: rgba(255, 255, 255, 0.07); border-radius: 5px; color: #ccc; border: 1px solid rgba(255, 255, 255, 0.1); }
+
+        .mid-slogan { padding: 110px 25px 60px; text-align: center; }
+        .mid-label { font-size: 13px; font-weight: 700; color: var(--text-sub); letter-spacing: 3px; margin-bottom: 10px; }
+        .mid-main { font-size: 23px; font-weight: 900; color: var(--gold-primary); margin-bottom: 15px; }
+
+        /* [3] 스토리텔링 섹션 */
+        .story-section { padding: 30px 25px 35px; background-color: #080808; border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .story-quote { font-size: 19px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 25px; }
+        .story-quote span { color: var(--gold-primary); }
+        .story-text { font-size: 15px; color: var(--text-sub); line-height: 1.8; }
+        .story-text p { margin-bottom: 25px; }
+        
+        .last-line-wrap { display: flex; align-items: center; justify-content: flex-start; margin-top: 25px; height: 60px; }
+        .ceo-name { font-size: 14px; color: #555; font-weight: 400; white-space: nowrap; letter-spacing: 0.5px; margin-right: 12px; }
+        .signature-img-final { width: 160px; height: auto; opacity: 0.95; transform: rotate(-3deg); filter: drop-shadow(0 0 5px rgba(197, 160, 89, 0.4)); }
+        .highlight-bold { color: var(--gold-primary); font-weight: 800; }
+
+        /* [4] Professional Milestone */
+        .history-section { padding: 60px 25px; }
+        .section-h { font-size: 19px; font-weight: 700; margin-bottom: 35px; color: var(--gold-primary); display: flex; align-items: center; gap: 12px; }
+        .section-h::after { content: ""; height: 1px; flex: 1; background: linear-gradient(to right, #333, transparent); }
+        .timeline { list-style: none; }
+        .timeline-item { position: relative; padding-left: 25px; margin-bottom: 35px; border-left: 1px solid #222; }
+        .timeline-item::before { content: ""; position: absolute; left: -5px; top: 6px; width: 9px; height: 9px; background: var(--gold-primary); border-radius: 50%; box-shadow: 0 0 10px var(--gold-primary); }
+        .tm-date { font-size: 12px; color: var(--gold-sub); font-weight: 700; margin-bottom: 5px; display: block; }
+        .tm-title { font-size: 16px; font-weight: 600; color: #eee; margin-bottom: 8px; }
+        .tm-desc { font-size: 14px; color: var(--text-sub); }
+
+        /* [5] 핵심 링크 */
+        .link-container { padding: 20px 25px 40px; }
+        .btn-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+        .nav-btn { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: #111; border: 1px solid #222; border-radius: 12px; text-decoration: none; color: #fff; font-size: 14px; transition: 0.3s; }
+        .nav-btn:hover { border-color: var(--gold-primary); }
+        .nav-btn .icon { color: var(--gold-primary); font-weight: bold; }
+        .mail-text { text-align: center; font-size: 13px; color: var(--text-sub); margin-top: -20px; margin-bottom: 40px; }
+
+        /* [6] 하단 고정 버튼 (2칸 분할) */
+        .footer-fixed {
+            position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 100%; max-width: 430px; padding: 15px 20px 25px;
+            background: linear-gradient(to top, #000 90%, transparent); z-index: 100;
+            display: grid; grid-template-columns: 1fr 1.8fr; gap: 10px;
+        }
+        .footer-btn {
+            display: flex; align-items: center; justify-content: center; padding: 18px 10px;
+            border-radius: 14px; text-decoration: none; font-size: 15px; font-weight: 800; text-align: center;
+        }
+        .save-btn { background: #1a1a1a; color: #fff; border: 1px solid #333; }
+        .call-btn { background: linear-gradient(135deg, var(--gold-primary), var(--gold-sub)); color: #000; }
+        
+        /* 토스트 알림 스타일 */
+        #toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); color: #fff; padding: 10px 20px; border-radius: 20px; font-size: 13px; visibility: hidden; z-index: 200; }
+    </style>
+</head>
+<body>
+
+    <div id="toast">링크가 복사되었습니다.</div>
+
+    <div class="wrapper">
+        <header class="logo-header">
+            <img src="https://i.imgur.com/V2LzpLU.png" alt="GOLD WAVE" class="heartbeat-logo">
+            <button class="share-top-btn" onclick="copyLink()" title="공유하기">
+                <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/></svg>
+            </button>
+        </header>
+
+        <div class="top-slogan">
+            <h2>STAY AHEAD, RIGHT HERE</h2>
+            <p>앞서 나가고 싶은 당신, 이곳이 바로 출발점입니다</p>
+        </div>
+
+        <div class="visual-area">
+            <img src="https://i.imgur.com/umlojEQ.jpeg" class="main-photo" alt="김민재 대표">
+            <div class="floating-namecard">
+                <h1 class="name">김민재</h1>
+                <p class="role">INC 대표이사 | 금융 알고리즘 설계자</p>
+                <div class="tags">
+                    <span class="tag-item">Quant Strategy</span>
+                    <span class="tag-item">FinTech</span>
+                    <span class="tag-item">Investor</span>
+                    <span class="tag-item">Developer</span>
+                </div>
+            </div>
+        </div>
+
+        <section class="mid-slogan">
+            <p class="mid-label">PRECISION & PROFIT</p>
+            <h2 class="mid-main">정밀한 설계가 만드는<br>압도적 수익의 파동</h2>
+            <p class="mid-sub">엔지니어의 로직과 트레이더의 감각이 만나<br>골드웨이브 시스템이 탄생했습니다.</p>
+        </section>
+
+        <section class="story-section">
+            <h2 class="story-quote">"매출 1위라는 <span>숫자</span>는<br>결코 거짓말을 하지 않습니다."</h2>
+            <div class="story-text">
+                <p>수천 명의 투자자를 마주하며 깨달은 단 하나의 진실은 시장은 결코 인간의 감정을 기다려주지 않는다는 것입니다.</p>
+                <p>찰나의 순간에 발생하는 틈을 포착하여 수익으로 바꾸던 기술력을 이제 <span class="highlight-bold">'골드웨이브'</span> 라는 견고한 로직에 모두 담았습니다.</p>
+                <p>당신이 잠든 사이에도 흔들림 없이 작동하는 투자의 미래를 약속합니다.</p>
+                <div class="last-line-wrap">
+                    <span class="ceo-name">아이노커머스 대표 김민재</span>
+                    <img src="https://i.imgur.com/o7tINyr.png" alt="MJ.KIM Signature" class="signature-img-final">
+                </div>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <h3 class="section-h">Professional Milestone</h3>
+            <ul class="timeline">
+                <li class="timeline-item">
+                    <span class="tm-date">PRESENT</span>
+                    <p class="tm-title">INC 대표이사<br>GOLD WAVE 프로그램 및 알고리즘 총괄 설계자</p>
+                    <p class="tm-desc">
+                        • INC 법인 총괄 및 환율 차익거래(Arbitrage) 전략 시스템 배포<br>
+                        • GOLD WAVE 프로그램 전반 설계 및 다중 전략 알고리즘 운용 총괄
+                    </p>
+                </li>
+                <li class="timeline-item">
+                    <span class="tm-date">ACHIEVEMENT</span>
+                    <p class="tm-title">금융 투자 그룹 수석 운용역</p>
+                    <p class="tm-desc">실전 트레이딩 성과 지표 매출 1위 기록 및 시장 흐름에 최적화된 리스크 관리 전략 보유</p>
+                </li>
+                <li class="timeline-item">
+                    <span class="tm-date">CERTIFICATION</span>
+                    <p class="tm-title">S-MAT 주식운용능력 전문 인증</p>
+                    <p class="tm-desc">한국금융인재개발원 주식운용능력평가 인증 및 금융 투자 실전 운용 역량 검증</p>
+                </li>
+            </ul>
+        </section>
+
+        <div class="link-container">
+            <h3 class="section-h">Gold Wave Inside</h3>
+            <div class="btn-list">
+                <a href="https://goldwave-notice.github.io/profit.html" class="nav-btn" target="_blank"><span>실시간 수익 현황 확인</span> <span class="icon">→</span></a>
+                <a href="https://goldwave-notice.github.io/faq.html" class="nav-btn" target="_blank"><span>자주 묻는 질문 & 고객 후기</span> <span class="icon">→</span></a>
+                <a href="https://goldwave-notice.github.io/program.html" class="nav-btn" target="_blank"><span>골드웨이브 프로그램 상세 소개</span> <span class="icon">→</span></a>
+            </div>
+
+            <h3 class="section-h">Contact & Community</h3>
+            <div class="btn-list">
+                <a href="https://open.kakao.com/me/goldwave" class="nav-btn" target="_blank"><span>카카오톡 1:1 상담 문의</span> <span class="icon">TALK</span></a>
+                <a href="tel:010-3732-9301" class="nav-btn"><span>대표번호 직통 전화문의</span> <span class="icon">CALL</span></a>
+                <a href="https://t.me/+dsAFHK_m0WUxMmJl" class="nav-btn" target="_blank"><span>골드웨이브 공식 채널</span> <span class="icon">SEND</span></a>
+            </div>
+            <p class="mail-text">Business Inquiry : <b>mj_ceo@iknowworks.com</b></p>
+        </div>
+    </div>
+
+    <div class="footer-fixed">
+        <a href="https://drive.google.com/uc?export=download&id=13bf8OPWZ7yQy9LubVHJqhBcnqq5vVpDM" class="footer-btn save-btn">연락처 저장</a>
+        <a href="tel:010-3732-9301" class="footer-btn call-btn">김민재 대표와 직접 상담하기</a>
+    </div>
+
+    <script>
+        function copyLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                const toast = document.getElementById('toast');
+                toast.style.visibility = 'visible';
+                setTimeout(() => { toast.style.visibility = 'hidden'; }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>
