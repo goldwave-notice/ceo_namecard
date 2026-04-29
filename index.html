@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>GOLD WAVE | 김민재 대표</title>
+    
+    <title>INC 김민재 대표 | GOLD WAVE</title>
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="INC 대표 김민재 | GOLD WAVE SYSTEM">
-    <meta property="og:description" content="엔지니어의 로직과 트레이더의 감각이 만난 투자의 미래. 김민재 대표의 모바일 명함을 확인하세요.">
-    <meta property="og:image" content="https://i.imgur.com/zJy1oy6.jpeg"> <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
     <meta property="og:url" content="https://goldwave-notice.github.io/ceo_namecard/">
+    <meta property="og:title" content="INC 김민재 대표 | GOLD WAVE">
+    <meta property="og:description" content="INC 김민재 대표의 공식 모바일 명함">
+    
+    <meta property="og:image" content="https://i.imgur.com/NzxnXtb.jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="INC 김민재 대표 | GOLD WAVE">
+    <meta name="twitter:description" content="엔지니어의 로직과 트레이더의 감각이 만난 투자의 미래.">
+    <meta name="twitter:image" content="https://i.imgur.com/NzxnXtb.jpeg">
+
     <style>
         :root {
             --bg-color: #000000;
@@ -22,13 +31,13 @@
             --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
         }
 
-        /* 모바일 최적화 기본 설정 */
+        /* 기본 설정 */
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; }
         body { background-color: var(--bg-color); font-family: var(--font-family); color: var(--text-main); overflow-x: hidden; line-height: 1.6; word-break: keep-all; }
 
         .wrapper { width: 100%; max-width: 430px; margin: 0 auto; position: relative; padding-bottom: 140px; }
 
-        /* [1] 상단 로고 & 공유 버튼 */
+        /* 로고 & 공유 버튼 */
         .logo-header { width: 100%; padding: 30px 20px 15px; display: flex; justify-content: center; position: relative; }
         .heartbeat-logo { width: 75px; animation: heartbeat 1.5s ease-in-out infinite; filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.4)); }
         @keyframes heartbeat { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
@@ -40,7 +49,7 @@
         .top-slogan h2 { font-size: 20px; font-weight: 900; letter-spacing: 3px; color: var(--gold-primary); margin-bottom: 8px; }
         .top-slogan p { font-size: 13px; color: var(--text-sub); font-weight: 300; }
 
-        /* [2] 비주얼 영역 */
+        /* 사진 및 성함 카드 영역 */
         .visual-area { position: relative; width: 100%; height: 75vh; overflow: visible; }
         .main-photo { width: 100%; height: 100%; object-fit: cover; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
         .floating-namecard {
@@ -56,11 +65,11 @@
         .tags { display: flex; gap: 6px; margin-top: 20px; flex-wrap: wrap; }
         .tag-item { font-size: 10px; padding: 4px 10px; background: rgba(255, 255, 255, 0.07); border-radius: 5px; color: #ccc; border: 1px solid rgba(255, 255, 255, 0.1); }
 
+        /* 스토리 및 소개 섹션 */
         .mid-slogan { padding: 110px 25px 60px; text-align: center; }
         .mid-label { font-size: 13px; font-weight: 700; color: var(--text-sub); letter-spacing: 3px; margin-bottom: 10px; }
         .mid-main { font-size: 23px; font-weight: 900; color: var(--gold-primary); margin-bottom: 15px; }
 
-        /* [3] 스토리텔링 섹션 */
         .story-section { padding: 30px 25px 35px; background-color: #080808; border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
         .story-quote { font-size: 19px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 25px; }
         .story-quote span { color: var(--gold-primary); }
@@ -72,7 +81,7 @@
         .signature-img-final { width: 160px; height: auto; opacity: 0.95; transform: rotate(-3deg); filter: drop-shadow(0 0 5px rgba(197, 160, 89, 0.4)); }
         .highlight-bold { color: var(--gold-primary); font-weight: 800; }
 
-        /* [4] Professional Milestone */
+        /* 경력 섹션 */
         .history-section { padding: 60px 25px; }
         .section-h { font-size: 19px; font-weight: 700; margin-bottom: 35px; color: var(--gold-primary); display: flex; align-items: center; gap: 12px; }
         .section-h::after { content: ""; height: 1px; flex: 1; background: linear-gradient(to right, #333, transparent); }
@@ -83,15 +92,16 @@
         .tm-title { font-size: 16px; font-weight: 600; color: #eee; margin-bottom: 8px; }
         .tm-desc { font-size: 14px; color: var(--text-sub); }
 
-        /* [5] 핵심 링크 */
+        /* 하단 링크 영역 */
         .link-container { padding: 20px 25px 40px; }
         .btn-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
         .nav-btn { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: #111; border: 1px solid #222; border-radius: 12px; text-decoration: none; color: #fff; font-size: 14px; transition: 0.3s; }
         .nav-btn:hover { border-color: var(--gold-primary); }
         .nav-btn .icon { color: var(--gold-primary); font-weight: bold; }
         .mail-text { text-align: center; font-size: 13px; color: var(--text-sub); margin-top: -20px; margin-bottom: 40px; }
+        .mail-text b { color: var(--gold-primary); }
 
-        /* [6] 하단 고정 버튼 (2칸 분할) */
+        /* 하단 고정 버튼 */
         .footer-fixed {
             position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
             width: 100%; max-width: 430px; padding: 15px 20px 25px;
@@ -104,8 +114,6 @@
         }
         .save-btn { background: #1a1a1a; color: #fff; border: 1px solid #333; }
         .call-btn { background: linear-gradient(135deg, var(--gold-primary), var(--gold-sub)); color: #000; }
-        
-        /* 토스트 알림 스타일 */
         #toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); color: #fff; padding: 10px 20px; border-radius: 20px; font-size: 13px; visibility: hidden; z-index: 200; }
     </style>
 </head>
