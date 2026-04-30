@@ -14,11 +14,6 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
-    <meta name="twitter:card" content="summary"> 
-    <meta name="twitter:title" content="INC 김민재 대표 | GOLD WAVE">
-    <meta name="twitter:description" content="엔지니어의 로직과 트레이더의 감각이 만난 투자의 미래.">
-    <meta name="twitter:image" content="https://github.com/goldwave-notice/ceo_namecard/blob/main/og-iimage.jpg?raw=true">
-
     <style>
         :root {
             --bg-color: #000000;
@@ -30,18 +25,25 @@
             --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
         }
 
-        /* 기본 설정 */
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; }
+        /* [보안 적용] 전체 텍스트 드래그 및 선택 방지 */
+        * { 
+            margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; 
+            -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
+        }
+
         body { background-color: var(--bg-color); font-family: var(--font-family); color: var(--text-main); overflow-x: hidden; line-height: 1.6; word-break: keep-all; }
 
         .wrapper { width: 100%; max-width: 430px; margin: 0 auto; position: relative; padding-bottom: 140px; }
+
+        /* [보안 적용] 이미지 드래그 및 저장 방지 */
+        img { -webkit-touch-callout: none; pointer-events: none; }
 
         /* 로고 & 공유 버튼 */
         .logo-header { width: 100%; padding: 30px 20px 15px; display: flex; justify-content: center; position: relative; }
         .heartbeat-logo { width: 75px; animation: heartbeat 1.5s ease-in-out infinite; filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.4)); }
         @keyframes heartbeat { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
         
-        .share-top-btn { position: absolute; right: 20px; top: 35px; background: rgba(255,255,255,0.1); border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .share-top-btn { position: absolute; right: 20px; top: 35px; background: rgba(255,255,255,0.1); border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; pointer-events: auto !important; }
         .share-top-btn svg { width: 18px; height: 18px; fill: var(--gold-primary); }
 
         .top-slogan { text-align: center; padding: 10px 20px 40px; }
@@ -77,7 +79,7 @@
         
         .last-line-wrap { display: flex; align-items: center; justify-content: flex-start; margin-top: 25px; height: 60px; }
         .ceo-name { font-size: 14px; color: #555; font-weight: 400; white-space: nowrap; letter-spacing: 0.5px; margin-right: 12px; }
-        .signature-img-final { width: 160px; height: auto; opacity: 0.95; transform: rotate(-3deg); filter: drop-shadow(0 0 5px rgba(197, 160, 89, 0.4)); }
+        .signature-img-final { width: 160px; height: auto; opacity: 0.95; transform: rotate(-3deg); filter: drop-shadow(0 0 5px rgba(197, 160, 89, 0.4)); pointer-events: none; }
         .highlight-bold { color: var(--gold-primary); font-weight: 800; }
 
         /* 경력 섹션 */
@@ -94,7 +96,7 @@
         /* 하단 링크 영역 */
         .link-container { padding: 20px 25px 40px; }
         .btn-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
-        .nav-btn { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: #111; border: 1px solid #222; border-radius: 12px; text-decoration: none; color: #fff; font-size: 14px; transition: 0.3s; }
+        .nav-btn { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: #111; border: 1px solid #222; border-radius: 12px; text-decoration: none; color: #fff; font-size: 14px; transition: 0.3s; pointer-events: auto !important; }
         .nav-btn:hover { border-color: var(--gold-primary); }
         .nav-btn .icon { color: var(--gold-primary); font-weight: bold; }
         .mail-text { text-align: center; font-size: 13px; color: var(--text-sub); margin-top: -20px; margin-bottom: 40px; }
@@ -109,14 +111,14 @@
         }
         .footer-btn {
             display: flex; align-items: center; justify-content: center; padding: 18px 10px;
-            border-radius: 14px; text-decoration: none; font-size: 15px; font-weight: 800; text-align: center;
+            border-radius: 14px; text-decoration: none; font-size: 15px; font-weight: 800; text-align: center; pointer-events: auto !important;
         }
         .save-btn { background: #1a1a1a; color: #fff; border: 1px solid #333; }
         .call-btn { background: linear-gradient(135deg, var(--gold-primary), var(--gold-sub)); color: #000; }
         #toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); color: #fff; padding: 10px 20px; border-radius: 20px; font-size: 13px; visibility: hidden; z-index: 200; }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 
     <div id="toast">링크가 복사되었습니다.</div>
 
@@ -208,14 +210,13 @@
         </div>
     </div>
 
-<!-- 하단 INC 공식 로고 섹션 (여백 강제 삭제) -->
-<div style="width: 100%; text-align: center; padding: 0; margin-top: -80px; position: relative; z-index: 1;">
-    <!-- margin-top을 -80px로 수정하여 위쪽 이메일 문구와 바짝 붙게 했습니다 -->
-    <img src="https://i.imgur.com/1y0hcpg.png" alt="INC OFFICIAL" style="width: 100px; opacity: 0.9; margin-bottom: 5px;">
-    <p style="font-size: 11px; color: #888; letter-spacing: 0.5px; margin-bottom: 120px; font-weight: 300;">
-        © 2026 INC Corp. All rights reserved.
-    </p>
-</div>
+    <div style="width: 100%; text-align: center; padding: 0; margin-top: -80px; position: relative; z-index: 1;">
+        <img src="https://i.imgur.com/1y0hcpg.png" alt="INC OFFICIAL" style="width: 100px; opacity: 0.9; margin-bottom: 5px;">
+        <p style="font-size: 11px; color: #888; letter-spacing: 0.5px; margin-bottom: 120px; font-weight: 300;">
+            © 2026 INC Corp. All rights reserved.
+        </p>
+    </div>
+
     <div class="footer-fixed">
         <a href="https://drive.google.com/uc?export=download&id=13bf8OPWZ7yQy9LubVHJqhBcnqq5vVpDM" class="footer-btn save-btn">연락처 저장</a>
         <a href="tel:010-3732-9301" class="footer-btn call-btn">김민재 대표와 직접 상담하기</a>
@@ -231,6 +232,5 @@
             });
         }
     </script>
-
 </body>
 </html>
